@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fact</title>
+
+  <meta name="description" content="Interactive app">
+  <meta name="author" content="Denise Case">
+
+  <!-- link to manifest and icons -->
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel=icon href="images/favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel=icon href="images/favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel=icon href="images/favicon_io/favicon.ico" > 
+
+  <!-- get current Bootstrap Material Design styles from https://mdbootstrap.com/md-bootstrap-cdn/ -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
+
+  <!-- required for sticky footer -->
+  <style>
+    body,
+    .sticky-footer-wrapper {
+      min-height: 100vh;
+    }
+  </style>
+< 
+  <script>
+    // If service workers are supported by user browser
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load fast
+      window.addEventListener('load', () => { navigator.serviceWorker.register('/sw.js') })
+    }
+  </script> 
+
+</head>
+
+<body class="d-flex flex-column sticky-footer-wrapper">
+  <!-- Bootstrap container or container-fluid (whole width) -->
+  <!-- https://getbootstrap.com/docs/4.0/layout/overview/ -->
+  <!-- margin top 5 ($spacer * 3) -->
+  <main class="container mt-5 flex-fill">
+
+    <!--Container has rows - first row -->
+    <div class="row">
+
+      <!--Rows have columns - column 1 (7/12) -->
+      <div class="col-12 mb-4">
+
+        <!-- Card -->
+        <div class="card">
+
+          <!-- Card content -->
+          <div class="card-body bg-light">
+
+            <!-- Title -->
+            <h4 class="card-title"><a>Random Fact</a></h4>
+            <!-- Text -->
+            <p class="card-text" id="fact"></p>
+            <!-- Button -->
+            <a href="#" class="btn btn-primary" id="btn">Get New Fact</a>
+
+          </div>
+
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- end column 1-->
+
+    </div>
+    <!-- end row 1 -->
+
+  </main>
+
+  <!-- sticky footer with padding on y-axis (top and bottom) -->
+
+  <footer>
+    <div class="footer container-fluid bg-light footer mt-auto py-3 ">
+      <a rel="noopener" href="https://profcase.github.io/js-gui-pwa-fact" target="_blank">Site</a>
+      &nbsp; &#9670; &nbsp;
+
+      <a rel="noopener" href="https://github.com/profcase/js-gui-pwa-fact" target="_blank">Source</a>
+    </div>
+  </footer>
+
+  <!-- get current Bootstrap Material Design code from https://mdbootstrap.com/md-bootstrap-cdn/ -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
+
+  <script type="module" src="scripts/jokes.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+
+</body>
+
+</html>
