@@ -8,7 +8,7 @@
  */
 
 // returns { "type": "success", "value": { "id": , "joke": } }
-const jokeURL = 'http://api.icndb.com/jokes/random?limitTo=[nerdy]';
+const jokeURL = 'https://api.icndb.com/jokes/random?limitTo=[nerdy]';
 const maxMillisecondsToRespond = 2000;
 
 /**
