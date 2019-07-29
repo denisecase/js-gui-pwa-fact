@@ -4,8 +4,8 @@
 
 ## Links
 
-- [Demo](https://profcase.github.io/js-gui-pwa-fact/)
-- [Source](https://github.com/profcase/js-gui-pwa-fact)
+- [Demo](https://denisecase.github.io/js-gui-pwa-fact/)
+- [Source](https://github.com/denisecase/js-gui-pwa-fact)
 
 ## Requirements
 
@@ -88,9 +88,10 @@ Update icons property in manifest.json as needed (if the names are the same, it 
 - [js-e1](https://github.com/profcase/js-e1)
 - [js-gui-basic](https://github.com/profcase/js-gui-basic)
 - [js-gui](https://github.com/profcase/js-gui)
-- [js-gui-with-tests](https://github.com/profcase/js-gui-with-tests)
-- [js-gui-pwa-fact](https://github.com/profcase/js-gui-pwa-fact)
+- [js-gui-ajax](https://github.com/profcase/js-gui-ajax)
 - [js-gui-storage](https://github.com/profcase/js-gui-storage)
+- [js-gui-with-tests](https://github.com/profcase/js-gui-with-tests)
+- [js-gui-pwa-fact](https://github.com/denisecase/js-gui-pwa-fact)
 - [js-gui-vue](https://github.com/denisecase/js-gui-vue)
 - [node-server](https://github.com/profcase/node-server)
 - [todo-server-jwt](https://github.com/profcase/todo-server-jwt)
@@ -99,3 +100,4 @@ Update icons property in manifest.json as needed (if the names are the same, it 
 - [node-express-mvc](https://github.com/denisecase/node-express-mvc)
 - [node-express-mvc-ejs-start](https://bitbucket.org/professorcase/node-express-mvc-ejs-start)
 - [node-express-mvc-ejs-passport](https://bitbucket.org/professorcase/node-express-mvc-ejs-passport)
+
