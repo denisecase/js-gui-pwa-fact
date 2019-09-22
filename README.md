@@ -66,15 +66,15 @@ Update icons property in manifest.json as needed (if the names are the same, it 
 
 ### 3. Create Additional Android Icons (optional)
 
+Then, generate a few additional icons for use on Android devices.
+
 - [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html)
-
 - [Stack Overflow](https://stackoverflow.com/questions/12768128/android-launcher-icon-size)
-
-- 48 × 48 (mdpi) , with 1 dp padding
+- 48 × 48 (mdpi), with 1 dp padding
 - 72 × 72 (hdpi), with 1 dp padding
 - 96 × 96 (xhdpi), with 1 dp padding
 - 144 × 144 (xxhdpi), with 1 dp padding
-- 192 × 192 (xxxhdpi) , with 4 dp padding
+- 192 × 192 (xxxhdpi), with 4 dp padding
 
 ## Code Formatting
 
