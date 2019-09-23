@@ -9,9 +9,9 @@
   "description": "Simple progressive web app that can be installed on mobile - provides random jokes. What will you make today?",
   "author": {
     "name": "Denise Case",
-    "website": "https://profcase.github.io",
-    "github": "https://github.com/profcase",
-    "source-repo": "https://github.com/profcase/js-gui-pwa-fact"
+    "website": "https://denisecase.github.io",
+    "github": "https://github.com/denisecase",
+    "source-repo": "https://github.com/denisecase/js-gui-pwa-fact"
   },
   "icons": [
     {
