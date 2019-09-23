@@ -1,6 +1,6 @@
 # js-gui-pwa-fact
 
-> Progressive web apps (PWA) are responsive, fast, available offline, and allow your users to install them on their mobile devices - just add manifest.json and  service-worker.js.
+> Progressive web apps (PWA) are responsive, fast, available offline, and allow your users to install them on their mobile devices - just add icons, manifest.json, and service-worker.js.
 
 ## Links
 
@@ -12,36 +12,26 @@
 - A browser (e.g., Firefox or Chrome)
 - A text editor (e.g., VS Code or Notepad++, or Chrome)
 - A favorite API (a service that will respond to requests)
-- Web Server for Chrome Extension (or view the [Demo](https://profcase.github.io/js-gui-pwa-fact/))
+- Host the site with [VS Code Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or [Web Server for Chrome Extension](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb) (or view the [Demo](https://denisecase.github.io/js-gui-pwa-fact/))
 
 ## IMPORTANT! Serve the app to use fetch
 
-We can't serve as a local file and use fetch, so host the app locally with [Web Server for Chrome Extension](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
+We can't serve our website as a local file and use fetch, so we must host the app locally with either VS Code Live Server or Web Server for Chrome Extension.
 
 ## App to PWA
 
 - Create manifest.json to provide information about your app.
 - Create favicons and a full set of icons (users can install a PWA on their devices)
-- Add index.html links to manifest and icons
+- Create service-worker.js
+- Add index.html links and icons to manifest.json
 - Add index.html script to register a service worker running independently, capable of intercepting all fetch requests and adjusting for offline, caching, and more
-- Create sw.js (or service-worker.js)
 
-## API
+## Workbox
 
-- [Chuck Norris Jokes](http://api.icndb.com/jokes/random?limitTo=[nerdy])
+- [Workbox](https://developers.google.com/web/tools/workbox) - PWA Libraries
+- [Workbox Caching Strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
 
-## Coding References
-
-- [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [JSON.parse to object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
-
-## Styles
-
-- [Bootstrap Material Design CDN](https://mdbootstrap.com/md-bootstrap-cdn/)
-- [Bootstrap 4.3 - Sticky Footer](https://getbootstrap.com/docs/4.3/examples/sticky-footer/)
-- [Bootstrap 4.3 - Colors](https://getbootstrap.com/docs/4.3/utilities/colors/)
-
-## Icons
+## Creating PWA Icons
 
 PWA can be installed. We need a lot of icons to handle all different devices.
 
@@ -76,13 +66,10 @@ Then, generate a few additional icons for use on Android devices.
 - 144 × 144 (xxhdpi), with 1 dp padding
 - 192 × 192 (xxxhdpi), with 4 dp padding
 
-## Code Formatting
+## Learn More
 
-- [HTML Validator](https://validator.w3.org/)
-- [JavaScript Standard Style Validator](https://standardjs.com/demo.html)
+- [Web Fundamentals](https://developers.google.com/web/fundamentals/)
 
 ## See Also
 
 - [More App Examples](https://profcase.github.io/web-apps-list/)
-
-

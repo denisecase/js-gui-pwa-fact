@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "background_color": "#fff",
   "theme_color": "#006747",
-  "description": "Simple progressive web app that can be installed on mobile - provides random statements. What will you make today?",
+  "description": "Simple progressive web app that can be installed on mobile - provides random jokes. What will you make today?",
   "author": {
     "name": "Denise Case",
     "website": "https://profcase.github.io",
