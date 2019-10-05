@@ -18,6 +18,10 @@
 
 We can't serve our website as a local file and use fetch, so we must host the app locally with either VS Code Live Server or Web Server for Chrome Extension.
 
+## Serving with VS Code Live Server
+
+After installing the VS Code Live Server, open the folder in VS Code, right-click index.html and select "Open with Live Server".
+
 ## App to PWA
 
 - Create manifest.json to provide information about your app.
