@@ -1,7 +1,7 @@
 {
   "name": "Fact PWA",
   "short_name": "Fact PWA",
-  "start_url": "./index.html?utm_source=a2hs",
+  "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
