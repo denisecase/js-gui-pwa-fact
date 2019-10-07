@@ -54,7 +54,7 @@ Download and save/expand zipfile in images folder.
 
 ### 2. Create Set of PWA Icons
 
-Full set of PWA icons built with [PWA Builder App Image Generator](https://www.pwabuilder.com/imageGenerator).  Upload one of your large favicons and update settings. Check all the boxes and save the zipfile to images. Extract.
+Full set of PWA icons built with [Favicon Generator](https://www.favicon-generator.org/).  Upload one of your large favicons and update settings. Make sure first radio button (... for Web, Android, Microsoft, iOS...) is checked. Download and save the zipfile to images folder. Extract.
 
 Update icons property in manifest.json as needed (if the names are the same, it can be reused from a reference project).
 
