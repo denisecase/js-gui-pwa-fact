@@ -73,6 +73,7 @@ Then, generate a few additional icons for use on Android devices.
 ## Learn More
 
 - [Web Fundamentals](https://developers.google.com/web/fundamentals/)
+- [Add to Home Screen Criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) - your app must meet the add to home screen criteria in order for the 'beforeinstallprompt' event to be fired and your app installed.
 
 ## See Also
 
