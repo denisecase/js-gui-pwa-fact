@@ -74,6 +74,7 @@ Then, generate a few additional icons for use on Android devices.
 
 - [Web Fundamentals](https://developers.google.com/web/fundamentals/)
 - [Add to Home Screen Criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) - your app must meet the add to home screen criteria in order for the 'beforeinstallprompt' event to be fired and your app installed.
+- Android Trouble-shooting. If you delete your PWA, it goes to App Trash and you can't reinstall while its there. Delete another app to get the App Trash prompt, go to App Trash, select the PWA, and delete it. Now you can reinstall. 
 
 ## See Also
 
