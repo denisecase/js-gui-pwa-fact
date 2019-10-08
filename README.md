@@ -73,8 +73,15 @@ Then, generate a few additional icons for use on Android devices.
 ## Learn More
 
 - [Web Fundamentals](https://developers.google.com/web/fundamentals/)
+- [Codelabs PWA](https://codelabs.developers.google.com/dev-pwa-training/)
+- [Score your app with Lighthouse](https://developers.google.com/web/tools/lighthouse) - right-click / Inspect / Audit tab (very last one). Click "Run audits".
+
+## Trouble-shooting
+
+- [Inspect the cache](https://developers.google.com/web/tools/chrome-devtools/storage/cache) - many service-worker issues can be helped with right-click / Inspect / Application tab.  Explore the cache. [Click "clear storage"](https://developers.google.com/web/tools/chrome-devtools/storage/cache#deletecache) to delete all cached content. 
 - [Add to Home Screen Criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria) - your app must meet the add to home screen criteria in order for the 'beforeinstallprompt' event to be fired and your app installed.
 - Android Trouble-shooting. If you delete your PWA, it goes to App Trash and you can't reinstall while its there. Delete another app to get the App Trash prompt, go to App Trash, select the PWA, and delete it. Now you can reinstall. 
+- [iOS Troubleshooting](https://blog.expo.io/enabling-ios-splash-screens-for-progressive-web-apps-34f06f096e5c) - Enabling iOS Splash Screens for Progressive Web Apps
 
 ## See Also
 
