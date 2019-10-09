@@ -72,6 +72,7 @@ Then, generate a few additional icons for use on Android devices.
 
 ## Learn More
 
+- [The 3 parts of a PWA](https://dakotagrvtt.github.io/44-563-group-4-pwa/)
 - [Web Fundamentals](https://developers.google.com/web/fundamentals/)
 - [Codelabs PWA](https://codelabs.developers.google.com/dev-pwa-training/)
 - [Score your app with Lighthouse](https://developers.google.com/web/tools/lighthouse) - right-click / Inspect / Audit tab (very last one). Click "Run audits".
