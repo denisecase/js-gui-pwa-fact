@@ -26,8 +26,7 @@
  *
  */
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js')
-
+ importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
 console.log('Service worker starting');
 
 if (workbox) {
