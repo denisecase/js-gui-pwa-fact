@@ -35,18 +35,18 @@
   </style>
 
   <script>
-    // If service workers are supported by user browser
-    // AFter all content has loaded, register the service worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-      })
+    // register ServiceWorker, remember to use absolute path!
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register(
+        '/js-gui-pwa-fact/service-worker.js',
+        { scope: '/js-gui-pwa-fact/' }
+      )
     }
   </script>
 
 </head>
 
-  <!-- apply styles from https://mdbootstrap.com/docs/jquery/layout/utilities/ -->
+<!-- apply styles from https://mdbootstrap.com/docs/jquery/layout/utilities/ -->
 
 <body class="d-flex flex-column sticky-footer-wrapper">
   <!-- Bootstrap container (centered) or container-fluid (whole width) -->
