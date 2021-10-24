@@ -26,19 +26,24 @@
  *
  */
 
- importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
+import { cacheNames, setCacheNameDetails } from 'workbox-core';
+import { registerRoute, setDefaultHandler, setCatchHandler } from 'workbox-routing';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+
+
 console.log('Service worker starting');
 
 if (workbox) {
   console.log(`Service worker Workbox loaded: ${workbox.routing}`)
 
-  const appName = 'js-gui-pwa-fact'
-  const appVersion = 'v1'
-  const maxAgeDay = 1 * 24 * 60 * 60
-  const maxAgeWeek = maxAgeDay * 7
-  const maxEntries = 60 // limit to 60 items
-  const httpResponseOpaque = 0 // CORS
-  const httpReponseOk = 200 // good
+  const appName = 'js-gui-pwa-fact';
+  const appVersion = 'v1';
+  const maxAgeDay = 1 * 24 * 60 * 60;
+  const maxAgeWeek = maxAgeDay * 7;
+  const maxEntries = 60; // limit to 60 items
+  const httpResponseOpaque = 0; // CORS
+  const httpReponseOk = 200; // good
 
   // cache 4 types of files: 
 
@@ -49,13 +54,12 @@ if (workbox) {
 
   // test 4 Regular Expressions at https://regexr.com/
 
-  const reCdnFont = /https:\/\/use\.fontawesome\.com\/.*all\.css$/
-  const reCdnStyles = /https:\/\/cdnjs\.cloudflare\.com\/.*\.css$/
-  const reStatic = /\.(?:js|css|html)$/
-  const reImages = /\.(?:png|gif|jpg|jpeg|webp|svg)$/
+  const reCdnFont = /https:\/\/use\.fontawesome\.com\/.*all\.css$/;
+  const reCdnStyles = /https:\/\/cdnjs\.cloudflare\.com\/.*\.css$/;
+  const reStatic = /\.(?:js|css|html)$/;
+  const reImages = /\.(?:png|gif|jpg|jpeg|webp|svg)$/;
 
   // set a prefix & suffix so local host caches remain unique
-  import {cacheNames, setCacheNameDetails} from 'workbox-core';
   setCacheNameDetails({
     prefix: appName,
     suffix: appVersion,
@@ -69,20 +73,14 @@ if (workbox) {
   console.log(`GACacheName=${cacheNames.googleAnalytics}`);
 
   /**
-   * Import routing modules
-   */
-  import {registerRoute} from 'workbox-routing';
-  import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
-
-  /**
   * Register handler that matches regex for CDN FONTS
   */
   registerRoute(reCdnFont,
     new StaleWhileRevalidate({
       cacheName: `${appName}-cdn-fonts`
     })
-  )
-  console.log(`Registered fonts ${reCdnFont} with StaleWhileRevalidate`)
+  );
+  console.log(`Registered fonts ${reCdnFont} with StaleWhileRevalidate`);
 
   /**
    * Register handler that matches regex for CDN STYLES
@@ -91,8 +89,8 @@ if (workbox) {
     new StaleWhileRevalidate({
       cacheName: `${appName}-cdn-styles`
     })
-  )
-  console.log(`Registered styles ${reCdnStyles} with StaleWhileRevalidate`)
+  );
+  console.log(`Registered styles ${reCdnStyles} with StaleWhileRevalidate`);
 
   /**
    * Register a handler that matches regex for STATIC ASSETS
@@ -101,8 +99,8 @@ if (workbox) {
     new StaleWhileRevalidate({
       cacheName: `${appName}-static`
     })
-  )
-  console.log(`Registered static assets ${reStatic} with StaleWhileRevalidate`)
+  );
+  console.log(`Registered static assets ${reStatic} with StaleWhileRevalidate`);
 
 
   /**
@@ -119,22 +117,25 @@ if (workbox) {
         })
       ]
     })
-  )
-  console.log(`Registered static images ${reImages} with CacheFirst`)
+  );
+  console.log(`Registered static images ${reImages} with CacheFirst`);
 
+
+  // Use a stale-while-revalidate strategy for all other requests.
+  setDefaultHandler(new StaleWhileRevalidate());
 
   /**
    * Set a common catch handler if any fetch fails
    */
-  workbox.routing.setCatchHandler(({ event }) => {
+  setCatchHandler(({ event }) => {
     console.error(`Error: ${event.error}`)
     return Response.error()
-  })
+  });
 
   /**
   * Attach install handler that will cache critical files
   */
-  self.addEventListener('install', event => {
+  addEventListener('install', event => {
     event.waitUntil(
       caches.open(`${appName}-static`)
         .then(cache => {
@@ -148,12 +149,12 @@ if (workbox) {
         })
         .catch(error => { console.error(`Error in install event: ${error} `) })
     )
-  })
+  });
 
   /**
    * Attach handler for each fetch that responds even when offline
    */
-  self.addEventListener('fetch', event => {
+  addEventListener('fetch', event => {
     console.log(event.request.url)
     event.respondWith(
       // returns a Promise that 
@@ -170,6 +171,6 @@ if (workbox) {
         })
         .catch(error => { console.error(`Error on fetch: ${error} `) })
     )
-  })
+  });
 }
-else { console.log(`Error: Workbox didn't load.`) }
+else { console.log(`Error: Workbox didn't load.`); }

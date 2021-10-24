@@ -35,13 +35,14 @@
   </style>
 
   <script>
-    // register ServiceWorker, remember to use absolute path!
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register(
-        '/js-gui-pwa-fact/service-worker.js',
-        { scope: '/js-gui-pwa-fact/' }
-      )
-    }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register(
+          '/js-gui-pwa-fact/service-worker.js',
+          { scope: '/js-gui-pwa-fact/' }
+        );
+
+      }
   </script>
 
 </head>
