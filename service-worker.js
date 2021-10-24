@@ -30,7 +30,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox
 console.log('Service worker starting');
 
 if (workbox) {
-  const {CacheableResponse} = workbox.cacheableResponse;
+  const { CacheableResponse, CacheableResponsePlugin } = workbox.cacheableResponse;
   const { cacheNames, setCacheNameDetails } = workbox.core;
   const { registerRoute, setDefaultHandler, setCatchHandler } = workbox.routing;
   const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
@@ -45,7 +45,7 @@ if (workbox) {
     })
   );
 
-
+ 
 }
 else { 
   console.log(`Error: Workbox didn't load.`); 

@@ -35,12 +35,12 @@
   </style>
 
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
+    if (navigator.serviceWorker) {
+      
         navigator.serviceWorker.register(
           '/js-gui-pwa-fact/service-worker.js',
-          { scope: '/js-gui-pwa-fact/' });
-      });
+          { scope: '/js-gui-pwa-fact/' })
+     
     }
   </script>
 
