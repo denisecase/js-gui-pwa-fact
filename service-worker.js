@@ -27,15 +27,23 @@
  */
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.2.0/workbox-sw.js');
-import { cacheNames, setCacheNameDetails } from 'workbox-core';
-import { registerRoute, setDefaultHandler, setCatchHandler } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
-
-
 console.log('Service worker starting');
 
 if (workbox) {
-  console.log(`Service worker Workbox loaded: ${workbox.routing}`)
+  const {CacheableResponse} = workbox.cacheableResponse;
+  const { cacheNames, setCacheNameDetails } = workbox.core;
+  const { registerRoute, setDefaultHandler, setCatchHandler } = workbox.routing;
+  const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
+  console.log("Workbox modules loaded");
+
+  registerRoute(
+    ({request}) => request.destination === 'image',
+    new CacheFirst({
+      plugins: [
+        new CacheableResponsePlugin({statuses: [0, 200]})
+      ],
+    })
+  );
 
   const appName = 'js-gui-pwa-fact';
   const appVersion = 'v1';
@@ -50,7 +58,7 @@ if (workbox) {
   //   1 cdn fonts
   //   2 cdn styles
   //   3 static assets
-  //   4 images
+  //   4 images - above
 
   // test 4 Regular Expressions at https://regexr.com/
 
@@ -173,4 +181,6 @@ if (workbox) {
     )
   });
 }
-else { console.log(`Error: Workbox didn't load.`); }
+else { 
+  console.log(`Error: Workbox didn't load.`); 
+}
