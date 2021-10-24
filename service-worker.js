@@ -107,7 +107,7 @@ if (workbox) {
     new workbox.strategies.CacheFirst({
       cacheName: `${appName}-images`,
       plugins: [
-        new workbox.expiration.Plugin({
+        new workbox.expiration.ExpirationPlugin({
           maxAgeSeconds: maxAgeWeek, // keep images for a week
           maxEntries: maxEntries,  // if more than max entries, delete the oldest
           purgeOnQuotaError: true
