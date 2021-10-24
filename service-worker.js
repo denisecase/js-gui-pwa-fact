@@ -55,25 +55,30 @@ if (workbox) {
   const reImages = /\.(?:png|gif|jpg|jpeg|webp|svg)$/
 
   // set a prefix & suffix so local host caches remain unique
-  workbox.core.setCacheNameDetails({
+  import {cacheNames, setCacheNameDetails} from 'workbox-core';
+  setCacheNameDetails({
     prefix: appName,
     suffix: appVersion,
-    precache: 'pre-cache',
-    runtime: 'runtime-cache'
-  })
+    precache: 'install-time',
+    runtime: 'run-time',
+    googleAnalytics: 'ga',
+  });
 
-  const preCacheName = workbox.core.cacheNames.precache
-  console.log(`preCacheName=${preCacheName}`)
+  console.log(`preCacheName=${cacheNames.precache}`);
+  console.log(`runtimeCacheName=${cacheNames.runtime}`);
+  console.log(`GACacheName=${cacheNames.googleAnalytics}`);
 
-  const runtimeCacheName = workbox.core.cacheNames.runtime
-  console.log(`runtimeCacheName=${runtimeCacheName}`)
-
+  /**
+   * Import routing modules
+   */
+  import {registerRoute} from 'workbox-routing';
+  import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
 
   /**
   * Register handler that matches regex for CDN FONTS
   */
-  workbox.routing.registerRoute(reCdnFont,
-    new workbox.strategies.StaleWhileRevalidate({
+  registerRoute(reCdnFont,
+    new StaleWhileRevalidate({
       cacheName: `${appName}-cdn-fonts`
     })
   )
@@ -82,8 +87,8 @@ if (workbox) {
   /**
    * Register handler that matches regex for CDN STYLES
    */
-  workbox.routing.registerRoute(reCdnStyles,
-    new workbox.strategies.StaleWhileRevalidate({
+  registerRoute(reCdnStyles,
+    new StaleWhileRevalidate({
       cacheName: `${appName}-cdn-styles`
     })
   )
@@ -92,8 +97,8 @@ if (workbox) {
   /**
    * Register a handler that matches regex for STATIC ASSETS
    */
-  workbox.routing.registerRoute(reStatic,
-    new workbox.strategies.StaleWhileRevalidate({
+  registerRoute(reStatic,
+    new StaleWhileRevalidate({
       cacheName: `${appName}-static`
     })
   )
@@ -103,8 +108,8 @@ if (workbox) {
   /**
    * Register a handler that matches regex for STATIC IMAGES
    */
-  workbox.routing.registerRoute(reImages,
-    new workbox.strategies.CacheFirst({
+  registerRoute(reImages,
+    new CacheFirst({
       cacheName: `${appName}-images`,
       plugins: [
         new workbox.expiration.ExpirationPlugin({
