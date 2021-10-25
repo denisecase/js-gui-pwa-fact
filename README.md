@@ -87,3 +87,7 @@ Then, generate a few additional icons for use on Android devices.
 ## See Also
 
 - [More App Examples](https://profcase.github.io/web-apps-list/)
+- [Inspect Registered Service Workers on your machine](chrome://serviceworker-internals/?devtools)
+- [Inspect may move here later](chrome://inspect/#service-workers)
+- [Service Workers - Overview](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [Service Workers - Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
