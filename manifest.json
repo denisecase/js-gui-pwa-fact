@@ -1,7 +1,8 @@
 {
   "name": "Fact PWA",
   "short_name": "Facts",
-  "start_url": "./index.html",
+  "scope": "/",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
