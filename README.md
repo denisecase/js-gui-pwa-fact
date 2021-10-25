@@ -43,11 +43,11 @@ PWA can be installed. We need a lot of icons to handle all different devices.
 
 Basic icon built with [Favicon.io](https://favicon.io)
 
-- Text: Fact
-- Background: Rounded
-- Font family: Leckerli One
-- Font size: 44
-- Color: #FFF
+- Text: :)
+- Background: Circle
+- Font family: Farro
+- Font size: 110
+- Color: #FFFFFF
 - Background: #006747
 
 Download and save/expand zipfile in images folder.

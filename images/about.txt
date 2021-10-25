@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Farro
+- Font Author: Copyright 2018 The Farro Project Authors (https://github.com/grayscaleltd/farro)
+- Font Source: http://fonts.gstatic.com/s/farro/v4/i7dEIFl3byGNHZVNHLq2cV5d.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
