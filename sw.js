@@ -1,5 +1,3 @@
-console.log('Starting sw.js');
-
 const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'offline.html';
 
