@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fact Offline</title>
+
+  <meta name="description" content="Example progressive web app">
+  <meta name="author" content="Denise Case">
+
+  <!-- link to manifest and icons -->
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel=icon href="images/favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel=icon href="images/favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel=icon href="images/favicon_io/favicon.ico">
+
+</head>
+
+<body>
+
+  <main>
+
+    <!-- Title -->
+    <h4 class="card-title"><a>Random Fact</a></h4>
+    <!-- Text -->
+    <p class="card-text" id="fact">Chuck Norris's OSI network model has only one layer - Physical.</p>
+    <!-- Button -->
+    <a href="#" class="btn btn-primary" id="btn">Offline</a>
+
+  </main>
+
+
+  <!-- sticky footer with padding on y-axis (top and bottom) -->
+
+  <footer>
+    <div class="footer container-fluid bg-light footer mt-auto py-3 ">
+      <a rel="noopener" href="https://denisecase.github.io/js-gui-pwa-fact" target="_blank">Demo</a>
+      &nbsp; &#9670; &nbsp;
+      <a rel="noopener" href="https://github.com/denisecase/js-gui-pwa-fact" target="_blank">Source</a>
+      <a id="status" href="https://denisecase.github.io/js-gui-pwa-fact/service-worker.js"></a>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
