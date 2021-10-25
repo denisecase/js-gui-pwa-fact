@@ -35,12 +35,16 @@
   </style>
 
   <script>
-    if (navigator.serviceWorker) {
-      
-        navigator.serviceWorker.register(
-          '/js-gui-pwa-fact/service-worker.js',
-          { scope: '/js-gui-pwa-fact/' })
-     
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(
+        'service-worker.js', { scope: './' }
+      ).then(serviceWorker => {
+        document.getElementById('status').innerHTML = 'sw';
+      }).catch(error => {
+        document.getElementById('status').innerHTML = error;
+      });
+    } else {
+      document.getElementById('status').innerHTML = 'no-sw';
     }
   </script>
 
@@ -92,6 +96,7 @@
       <a rel="noopener" href="https://denisecase.github.io/js-gui-pwa-fact" target="_blank">Demo</a>
       &nbsp; &#9670; &nbsp;
       <a rel="noopener" href="https://github.com/denisecase/js-gui-pwa-fact" target="_blank">Source</a>
+      <a id="status" href="https://denisecase.github.io/js-gui-pwa-fact/service-worker.js"></a>
     </div>
   </footer>
 
