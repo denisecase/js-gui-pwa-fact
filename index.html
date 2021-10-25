@@ -34,14 +34,32 @@
   </style>
 
   <script>
-    if ('serviceWorker' in navigator) {
+    console.log('window.location.host: ', window.location.host);
+    isLocal = (window.location.host.startsWith('localhost') || window.location.host.startsWith('127.0.0.1'));
+    console.log('App running locally: ', isLocal);
+
+    if (isLocal && 'serviceWorker' in navigator) {
+      // does not need repo name
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          console.log('Local service worker registration successful with scope: ', registration.scope);
         }, function (err) {
-          console.log('ServiceWorker registration failed: ', err);
+          console.log('Local service worker registration failed: ', err);
         });
       });
+    }
+    else if (!isLocal && 'serviceWorker' in navigator) {
+      // GitHub pages - needs repo name
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/js-gue-pwa-fact/service-worker.js').then(function (registration) {
+          console.log('GitHub Pages service worker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          console.log('GitHub Pages service worker registration failed: ', err);
+        });
+      });
+    }
+    else {
+      console.log('Brower does not have service worker capabilities: ', err);
     }
   </script>
 
