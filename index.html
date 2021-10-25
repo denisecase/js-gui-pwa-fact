@@ -51,7 +51,7 @@
     }
     else if (!isLocal && 'serviceWorker' in navigator) {
       // GitHub pages - needs repo name
-      pathToSW = '/js-gui-pwa-fact/service-worker.js.js';
+      pathToSW = '/js-gui-pwa-fact/service-worker.js';
       window.addEventListener('load', function () {
         navigator.serviceWorker.register(pathToSW, { scope: '/js-gui-pwa-fact/' }).
           then(function (registration) {
