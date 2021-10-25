@@ -35,17 +35,9 @@
   </style>
 
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(
-        'service-worker.js', { scope: './' }
-      ).then(serviceWorker => {
-        document.getElementById('status').innerHTML = 'sw';
-      }).catch(error => {
-        document.getElementById('status').innerHTML = error;
-      });
-    } else {
-      document.getElementById('status').innerHTML = 'no-sw';
-    }
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/js-gui-pwa-fact/sw.js', {scope: '/js-gui-pwa-fact/'})
+  }
   </script>
 
 </head>
