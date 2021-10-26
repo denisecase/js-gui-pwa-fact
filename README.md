@@ -1,6 +1,8 @@
 # js-gui-pwa-fact
 
-> Progressive web apps (PWA) are responsive, fast, available offline, and allow your users to install them on their mobile devices - just add icons, manifest.json, and service-worker.js.
+> Progressive web apps (PWA) are responsive, fast, available offline, and allow your users to install them on their mobile devices - just add icons, manifest.json, and service-worker.js. 
+
+2021 PWA on GitHub Pages using Workbox 7 
 
 ## Links
 
@@ -77,3 +79,4 @@ Download and save/expand zipfile in images folder.
 - [Service Workers - Overview](https://developers.google.com/web/fundamentals/primers/service-workers)
 - [Service Workers - Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
 - [How to Add Maskable Icon](https://web.dev/maskable-icon-audit/?utm_source=lighthouse&utm_medium=devtools#how-to-add-maskable-icon-support-to-your-pwa)
+- [PWA Workshop](https://github.com/GoogleChromeLabs/pwa-workshop-codelab/tree/final)

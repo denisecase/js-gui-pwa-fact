@@ -32,19 +32,23 @@ console.log('Service worker starting');
 if (workbox) {
   const { CacheableResponse, CacheableResponsePlugin } = workbox.cacheableResponse;
   const { cacheNames, setCacheNameDetails } = workbox.core;
+  const { ExpirationPlugin } = workbox.expiration;
   const { registerRoute, setDefaultHandler, setCatchHandler } = workbox.routing;
   const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
+  const { offlineFallback, warmStrategyCache } = workbox.recipes;
   console.log("Workbox modules loaded");
 
-  registerRoute(
-    ({request}) => request.destination === 'image',
-    new CacheFirst({
-      plugins: [
-        new CacheableResponsePlugin({statuses: [0, 200]})
-      ],
-    })
-  );
+  const pageCache = new CacheFirst({
+    cacheName: 'page-cache',
+    plugins: [
+      new CacheableResponsePlugin({ statuses: [0, 200] }),
+      new ExpirationPlugin({ maxAgeSeconds: 30 * 24 * 60 * 60  }),
+    ],
+  });
 
+  registerRoute(({ request }) => request.mode === 'navigate', pageCache);
+  offlineFallback({ pageFallback: '/offline.html'});
+  warmStrategyCache({ urls: ['/index.html', '/'], strategy: pageCache});
  
 }
 else { 
