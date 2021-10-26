@@ -30,7 +30,7 @@ Due to path changes when hosting with GitHub Pages this version will not work wi
 
 ## Audit with Lighthouse
 
-- Push code, open in GitHub Pages using Bing browser.
+- To audit, open in GitHub Pages using Bing browser InPrivate window.
 - Score app with Lighthouse. Right-click / Inspect / Lighthouse (last tab).
 
 ## Workbox - Help for Service Workers
