@@ -91,3 +91,5 @@ Then, generate a few additional icons for use on Android devices.
 - [Inspect may move here later](chrome://inspect/#service-workers)
 - [Service Workers - Overview](https://developers.google.com/web/fundamentals/primers/service-workers)
 - [Service Workers - Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
+- [How to Add Maskable Icon](https://web.dev/maskable-icon-audit/?utm_source=lighthouse&utm_medium=devtools#how-to-add-maskable-icon-support-to-your-pwa)
+- [Maskable.app Editor](https://maskable.app/editor)
