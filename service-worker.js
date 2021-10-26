@@ -38,17 +38,26 @@ if (workbox) {
   const { offlineFallback, warmStrategyCache } = workbox.recipes;
   console.log("Workbox modules loaded");
 
-  const pageCache = new CacheFirst({
-    cacheName: 'page-cache',
-    plugins: [
-      new CacheableResponsePlugin({ statuses: [0, 200] }),
-      new ExpirationPlugin({ maxAgeSeconds: 30 * 24 * 60 * 60  }),
-    ],
-  });
+  registerRoute(
+    ({request}) => request.destination === 'image',
+    new CacheFirst({
+      plugins: [
+        new CacheableResponsePlugin({statuses: [0, 200]})
+      ],
+    })
+  );
 
-  registerRoute(({ request }) => request.mode === 'navigate', pageCache);
-  offlineFallback({ pageFallback: '/offline.html'});
-  warmStrategyCache({ urls: ['/index.html', '/'], strategy: pageCache});
+  // const pageCache = new CacheFirst({
+  //   cacheName: 'page-cache',
+  //   plugins: [
+  //     new CacheableResponsePlugin({ statuses: [0, 200] }),
+  //     new ExpirationPlugin({ maxAgeSeconds: 30 * 24 * 60 * 60  }),
+  //   ],
+  // });
+
+  // registerRoute(({ request }) => request.mode === 'navigate', pageCache);
+  // offlineFallback({ pageFallback: '/offline.html'});
+  // warmStrategyCache({ urls: ['/index.html', '/'], strategy: pageCache});
  
 }
 else { 
