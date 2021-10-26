@@ -11,8 +11,8 @@
 
 ## Requirements
 
-- A browser (e.g., Bing or Chrome - Bing Lighthouse works better!)
-- A text editor (e.g., VS Code or Notepad++)
+- A browser (e.g., Bing - Lighthouse audits work!)
+- A text editor (e.g., VS Code)
 - A favorite API (a service that will respond to requests)
 - Host the site with GitHub Pages
 
@@ -28,6 +28,11 @@ Due to path changes when hosting with GitHub Pages this version will not work wi
 - Add index.html links and icons to manifest.json
 - Add index.html script to register a service worker running independently, capable of intercepting all fetch requests and adjusting for offline, caching, and more
 
+## Audit with Lighthouse
+
+- Push code, open in GitHub Pages using Bing browser.
+- Score app with Lighthouse. Right-click / Inspect / Lighthouse (last tab).
+
 ## Workbox - Help for Service Workers
 
 - [Workbox](https://developers.google.com/web/tools/workbox) - PWA Libraries
@@ -35,7 +40,7 @@ Due to path changes when hosting with GitHub Pages this version will not work wi
 
 ## Creating PWA Icons
 
-PWA can be installed. We need a lot of icons to handle all different devices.
+PWA can be installed. We need icons to handle different devices.
 
 ### 1. Create Initial Favicons
 
@@ -59,11 +64,6 @@ Download and save/expand zipfile in images folder.
 
 - Create Apple Touch Icons. 
 - [Apple Touch Icon Generator](https://manytools.org/http-html-text/apple-touch-icon-generator/) will do this online from an existing icon. 
-
-## Audit
-
-- Score your app with Lighthouse. Right-click / Inspect / Lighthouse tab (very last one). 
-- Bing provides faster, better results. Chrome works, too. 
 
 ## Trouble-shooting
 
