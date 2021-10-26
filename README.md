@@ -9,28 +9,24 @@
 
 ## Requirements
 
-- A browser (e.g., Firefox or Chrome)
-- A text editor (e.g., VS Code or Notepad++, or Chrome)
+- A browser (e.g., Bing or Chrome - Bing Lighthouse works better!)
+- A text editor (e.g., VS Code or Notepad++)
 - A favorite API (a service that will respond to requests)
-- Host the site with [VS Code Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or [Web Server for Chrome Extension](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb) (or view the [Demo](https://denisecase.github.io/js-gui-pwa-fact/))
+- Host the site with GitHub Pages
 
-## IMPORTANT! Serve the app to use fetch
+## No More Serving with VS Code Live Server
 
-We can't serve our website as a local file and use fetch, so we must host the app locally with either VS Code Live Server or Web Server for Chrome Extension.
+Due to path changes when hosting with GitHub Pages this version will not work with Live Server. (We would have to autogenerate the manifest file depending on host - see scope and start_url.)
 
-## Serving with VS Code Live Server
-
-After installing the VS Code Live Server, open the folder in VS Code, right-click index.html and select "Open with Live Server".
-
-## App to PWA
+## Web App to PWA - How To
 
 - Create manifest.json to provide information about your app.
-- Create favicons and a full set of icons (users can install a PWA on their devices)
+- Create favicons and icons (users can install a PWA on their devices)
 - Create service-worker.js
 - Add index.html links and icons to manifest.json
 - Add index.html script to register a service worker running independently, capable of intercepting all fetch requests and adjusting for offline, caching, and more
 
-## Workbox
+## Workbox - Help for Service Workers
 
 - [Workbox](https://developers.google.com/web/tools/workbox) - PWA Libraries
 - [Workbox Caching Strategies](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)
@@ -52,30 +48,20 @@ Basic icon built with [Favicon.io](https://favicon.io)
 
 Download and save/expand zipfile in images folder.
 
-### 2. Create Set of PWA Icons
+### 2. Create Maskable Icon(s)
 
-Full set of PWA icons built with [Real Favicon Generator](https://realfavicongenerator.net/).  Upload your large 512x512 favicon and generate a full set. Change the settings as you like (e.g., set background color to #006747). Set icon location to /images/AppImages. Download your package.
+- Create at least one maskable icon. 
+- [Maskable.app Editor](https://maskable.app/editor) will do this online from an existing icon.  
 
-Update icons property in manifest.json as needed (if the names are the same, it can be reused from a reference project).
+### 3. Create Apple Touch Icons
 
-### 3. Create Additional Android Icons (optional)
+- Create Apple Touch Icons. 
+- [Apple Touch Icon Generator](https://manytools.org/http-html-text/apple-touch-icon-generator/) will do this online from an existing icon. 
 
-Then, generate a few additional icons for use on Android devices.
+## Audit
 
-- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html)
-- [Stack Overflow](https://stackoverflow.com/questions/12768128/android-launcher-icon-size)
-- 48 × 48 (mdpi), with 1 dp padding
-- 72 × 72 (hdpi), with 1 dp padding
-- 96 × 96 (xhdpi), with 1 dp padding
-- 144 × 144 (xxhdpi), with 1 dp padding
-- 192 × 192 (xxxhdpi), with 4 dp padding
-
-## Learn More
-
-- [The 3 parts of a PWA](https://dakotagrvtt.github.io/44-563-group-4-pwa/)
-- [Web Fundamentals](https://developers.google.com/web/fundamentals/)
-- [Codelabs PWA](https://codelabs.developers.google.com/dev-pwa-training/)
-- [Score your app with Lighthouse](https://developers.google.com/web/tools/lighthouse) - right-click / Inspect / Audit tab (very last one). Click "Run audits".
+- Score your app with Lighthouse. Right-click / Inspect / Lighthouse tab (very last one). 
+- Bing provides faster, better results. Chrome works, too. 
 
 ## Trouble-shooting
 
@@ -86,11 +72,8 @@ Then, generate a few additional icons for use on Android devices.
 
 ## See Also
 
-- [More App Examples](https://profcase.github.io/web-apps-list/)
 - [Inspect Registered Service Workers on your machine](chrome://serviceworker-internals/?devtools)
 - [Inspect may move here later](chrome://inspect/#service-workers)
 - [Service Workers - Overview](https://developers.google.com/web/fundamentals/primers/service-workers)
 - [Service Workers - Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
 - [How to Add Maskable Icon](https://web.dev/maskable-icon-audit/?utm_source=lighthouse&utm_medium=devtools#how-to-add-maskable-icon-support-to-your-pwa)
-- [Maskable.app Editor](https://maskable.app/editor)
-- [Apple Touch Icon Generator](https://manytools.org/http-html-text/apple-touch-icon-generator/)
