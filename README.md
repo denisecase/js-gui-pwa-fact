@@ -33,6 +33,8 @@ Due to path changes when hosting with GitHub Pages this version will not work wi
 - To audit, open in GitHub Pages using Bing browser InPrivate window.
 - Score app with Lighthouse. Right-click / Inspect / Lighthouse (last tab).
 
+![Bing Lighthouse Audit Results](images/screenshots/PWA.PNG)
+
 ## Workbox - Help for Service Workers
 
 - [Workbox](https://developers.google.com/web/tools/workbox) - PWA Libraries
