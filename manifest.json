@@ -1,7 +1,7 @@
 {
   "name":"Fact PWA",
   "short_name":"Facts",
-  "scope":"/",
+  "scope": "https://denisecase.github.io/js-gui-pwa-fact/",
   "start_url":"/",
   "display":"standalone",
   "orientation":"portrait",
